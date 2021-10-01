@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&display=swap');
+
+$color-main: #3EA1D1;
+$color-text: #333333;
+
+$layout-width-inner: 768px;
+
+
+
+$breakpoints: (
+//キー : 値
+  'sp': "(max-width: 767px)",
+  'pc': "(min-width: #{$layout-width-inner})"
+) !default;
+
+//メディアクエリ用のmixinを定義。デフォ値はmd
+@mixin mq($breakpoint: sp) {
+    //map-get(マップ型変数, キー)で値を取得
+      @media #{map-get($breakpoints, $breakpoint)} {
+        //この中をカスタムできる
+        @content;
+      }
+    }
+    
+    //使用例
+    /*.header {
+      height: 100px; //ＰＣ用の表示
+    
+      @include mq(sp) {
+        height: 60px; //スマホの時だけ高さを60pxに！
+      }
+    }*/
+    
+    /*このように @media screen and (width: 767px) { } を書かなくても、
+    PC用のcssを書きながらスマホ用の表示を書き足すことができます！ */
+
+    @import "common";
+    @import "header";
+    @import "main-visual";
+    @import "concept";
+    @import "feature";
+    @import "bg-img";
+    @import "products";
+    @import "news";
+    @import "cute";
+    @import "contact";
+    @import "footer";

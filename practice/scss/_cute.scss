@@ -1,0 +1,57 @@
+.cute{
+    .container{
+        display: flex;
+        @include mq(sp){
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+}
+
+.cute-left{
+    position: relative;
+    @include mq(sp){
+        position: static;
+        width: 100%;
+    }
+    width: 50%;
+    h2{
+        font-size: 28px;
+        line-height: calc(48/28);
+        margin-bottom: 44px;
+        font-weight: 600;
+        @include mq(sp){
+            margin-bottom: 26px;
+            margin-top: 36px;
+            font-size: 20px;
+            line-height: calc(34/20);
+        }
+    }
+    p{
+        line-height: calc(27/16);
+        padding-right: 12%;
+        @include mq(sp){
+            padding-right: 0;
+            font-size: 14px;
+            line-height: calc(24/14);
+        }
+    }
+}
+
+.cute-right{
+    flex: 1;
+    @include mq(sp){
+        width: 100%;
+    }
+}
+
+.cute-left-inner{
+    position: absolute;
+    @include mq(sp){
+        position: static;
+        top: 0;
+        transform: translateY(0);
+    }
+    top: 50%;
+    transform: translateY(-50%);
+}

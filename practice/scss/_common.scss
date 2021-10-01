@@ -1,0 +1,81 @@
+body{
+    color: $color-text;
+    background-color: #FFFFFF;
+    font-family: 'Noto Serif JP', serif;
+    overflow-x: hidden;
+}
+
+@media (max-width: 767px) { 
+    .is-pc {
+      display: none;
+    }
+  }
+  @media (min-width: 768px) {
+    .is-sp {
+      display: none;
+    }
+  }
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.container{
+    width: calc(1200%*100/1280);
+    max-width: 1200px;
+    margin: 0 auto;
+    @include mq(sp) {
+        width: 100%;
+        padding: 0 14px;
+      }
+}
+
+.section{
+    margin: 160px 0 0;
+    @include mq(sp){
+      margin: 96px 0 0;
+    }
+}
+
+.section-title{
+  @include mq(sp){
+    font-size: 30px;
+    margin-bottom: 48px;
+  }
+    font-weight: 600;
+    font-size: 40px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 17px;
+    margin-bottom: 64px;
+    &::after{
+        background-color: $color-main;
+        position: absolute;
+        content: "";
+        width: 60px;
+        height: 1px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+    }
+}
+
+.more-btn{
+    text-align: center;
+    padding-top: 13px;
+    color: $color-main;
+    border: 1px solid $color-main;
+    margin-top: 48px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 157px;
+    height: 46px;
+    transition: all 0.5s 0s ease;
+    &:hover{
+        background-color: $color-main;
+        color: #FFFFFF;
+    }
+}
+

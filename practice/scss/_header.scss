@@ -1,0 +1,146 @@
+header{
+    background-color: #FFFFFF;
+    z-index: 5;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 70px;
+    @include mq(sp){
+        height: 60px;
+    }
+    .container{
+        display: flex;
+    }
+}
+
+
+.header-left{
+    width: 120px;
+    height: auto;
+    margin-top: 25px;
+    @include mq(sp){
+        margin-top: 20px;
+    }
+}
+
+.header-right{
+    @include mq(sp) {
+        display: none;
+      }
+    margin-left: auto;
+    ul{
+        display: flex;
+        li{
+            margin-top: 27px;
+            &:nth-child(n+2){
+                margin-left: 48px;
+            }
+            a{
+                color:$color-text;
+                transition: all 0.2s 0s ease;
+                &:hover{
+                    color: $color-main;
+                }
+            }
+        }
+    }
+}
+
+
+
+.drawar-btn{
+    @include mq(pc){
+        display: none;
+    }
+    cursor: pointer;
+    z-index: 6;
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    top: 0px;
+    right: 0px;
+    background-color: inherit;
+    .drawar-btn-inner{
+        position: absolute;
+        width: 30px;
+        height: 18px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        div{
+            transition: all 0.5s 0s ease;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background-color: $color-main;
+            &:nth-child(1){
+                top: 0;
+                left: 0;
+            }
+            &:nth-child(2){
+                top: 50%;
+                transform: translateY(-50%);
+                opacity: 1;
+                visibility: visible;
+            }
+            &:nth-child(3){
+                bottom: 0;
+                left: 0;
+            }
+        }
+    }
+
+    &.click{
+        .drawar-btn-inner{
+        div{
+            &:nth-child(1){
+            top: 8px;
+            transform: rotate(45deg);
+            }
+            &:nth-child(2){
+                opacity: 0;
+                visibility: hidden;
+            }
+            &:nth-child(3){
+                bottom: 8px;
+            transform: rotate(-45deg);
+            }
+        }
+    }
+    }
+}
+
+
+.drawar-menu{
+    @include mq(pc){
+        display: none;
+    }
+    &.click{
+        right: 0;
+    }
+    transition: all 0.5s 0s ease;
+    z-index: 2;
+    position: fixed;
+    top: 60px;
+    right: -270px;
+    width: 270px;
+    height: 100%;
+    background-color: $color-main;
+    ul{
+        margin-top: 20px;
+        li{
+            text-align: right;
+            a{
+                display: block;
+                color: #FFFFFF;
+                font-size: 18px;
+                letter-spacing: calc(1.8em/18) ;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                padding-right: 15px;
+            }
+        }
+    }
+}
+

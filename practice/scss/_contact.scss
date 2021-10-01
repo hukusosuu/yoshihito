@@ -1,0 +1,259 @@
+input[type="text"] {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: #FFFFFF;
+	background-image: none;
+	border: none;
+	border-radius: 0;
+	color: inherit;
+	font-family: inherit;
+	font-size: 1em;
+	padding: 0.4em 0.8em;
+    @include mq(sp){
+	width: 100%;
+    }
+    width: 320px;
+    &:focus {
+        border: none;
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+textarea {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: #FFFFFF;
+	background-image: none;
+	border: none;
+	border-radius: 0;
+	color: inherit;
+	font-family: inherit;
+	font-size: 1em;
+	height: 100px;
+	padding: 0.4em 0.8em;
+    @include mq(sp){
+	width: 100%;
+    }
+    width: 320px;
+    &:focus {
+        border: none;
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+
+
+
+
+
+
+.contact{
+    p{
+        text-align: center;
+        margin-bottom: 24px;
+        span{
+            color: #E7728E;
+        }
+        a{
+            color: #3EA1D1B3;
+            text-decoration: underline;
+        }
+    }
+    background-image: url(../image/contact@2x.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 72px;
+    padding-bottom: 85px;
+    dl{
+        @include mq(sp){
+            margin: 0 28px;
+        }
+        .row{
+            @include mq(sp){
+                display: block;
+            }
+            margin-bottom: 32px;
+            display: flex;
+            justify-content: center;
+            dt{
+                margin-right: 20px;
+                width: 170px;
+                height: 40px;
+                @include mq(sp){
+                    height: 32px;
+                    margin-bottom: 3px;
+                    margin-right: 0;
+                    width: 150px;
+                }
+                background-color: #3EA1D1B3;
+                color: #FFFFFF;
+                position: relative;
+                &::after{
+                    @include mq(sp){
+                        display: none;
+                    }
+                    position: absolute;
+                    content: "";
+                    right: -7px;
+                    width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 20px 0 20px 7px;
+                        border-color: transparent transparent transparent #3EA1D1B3;
+                }
+                label{
+                    position: absolute;
+                    top: 45%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    white-space: nowrap;
+                    span{
+                        color: #E7728E;
+                    }
+                }
+            }
+        }
+    }
+    button{
+        margin-top: 27px;
+        width: 137px;
+        height: 46px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        border: 1px solid $color-main;
+        color: $color-main;
+        background-color: #FFFFFF;
+        &.-active{
+            color: #fff;
+            background-color: $color-main;
+            cursor: pointer;
+        }
+
+    }
+}
+
+.select-title{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    white-space: nowrap;
+                    span{
+                        color: #E7728E;
+                    }
+}
+
+.text{
+    border-radius: 2px;
+    width: 320px;
+    height: 40px;
+    border: none;
+    box-shadow: 5px 6px 15px #60606029;
+}
+
+
+
+textarea{
+    border-radius: 2px;
+    @include mq(sp){
+        width: 100%;
+    }
+    width: 320px;
+    height: 122px;
+    border: none;
+    box-shadow: 5px 6px 15px #60606029;
+}
+
+.contact-btn{
+    margin: 0 auto;
+}
+
+input[type="radio"]{
+    opacity: 0;
+    &:checked+label{
+        background-color: $color-main;
+        color: #FFFFFF;
+        transition: all 0.2s 0s ease;
+    }
+}
+
+.select-label{
+    cursor: pointer;
+    background-color: #FFFFFF;
+    display: block;
+    width: 79px;
+    height: 40px;
+    font-size: 16px;
+    text-align: center;
+    padding-top: 10px;
+    color: $color-main;
+    margin-left: -20px;
+}
+
+.margin{
+    width: 162px;
+    height: 40px;
+}
+
+
+.radio-flex{
+    display: flex;
+}
+
+label[for="privacy"]{
+    display: block;
+    text-align: center;
+}
+
+
+.privacy-checkbox{
+    &:hover{
+        cursor: pointer;
+    }
+    position: relative;
+    padding-left: 30px;
+    display: inline-block;
+    &::before{
+        position: absolute;
+        content: "";
+        width: 16px;
+        height: 16px;
+        border: 1px solid black;
+        border-radius: 1px;
+        left: 0;
+        background-color: #fff;
+        transition: all 0.2s 0s ease;
+    }
+}
+
+input[type="checkbox"]{
+    opacity: 0;
+    &:checked+div{
+        &::before{
+            left: 3px;
+            top: -4px;
+            border-top: none;
+            border-left: none;
+            border-right: 3px solid $color-main;
+            border-bottom: 3px solid $color-main;
+            transform: rotate(45deg);
+            width: 8px;
+            background-color: inherit;
+            transition: all 0.2s 0s ease;
+        }
+    }
+}
+
+.contact-message{
+    text-align: center;
+    margin-top: 60px;
+    display: none;
+    &.-error{
+        color: #f00;
+    }
+}
